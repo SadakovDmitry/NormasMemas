@@ -18,7 +18,9 @@ const products = [
   { id: 4, name: 'Подарочный набор «Нормас»', price: 799, color: '#b8b8ff', ink: '#3a0ca3', emoji: '🎁', badge: 'ХИТ' },
 ];
 
-const state = { concept: 0, hero: 0, cart: 0, expanded: 1, city: 'Москва', toast: '', playing: null, popup: false };
+const state = { concept: 0, hero: 0, cart: 0, expanded: 0, city: 'Москва', toast: '', playing: null, popup: false };
+const requestedDesign = Number(new URLSearchParams(location.search).get('design'));
+if (requestedDesign >= 1 && requestedDesign <= 10) state.concept = requestedDesign - 1;
 const app = document.querySelector('#app');
 
 function money(n) { return `${n.toLocaleString('ru-RU')} ₽`; }
@@ -50,9 +52,11 @@ function ringtoneAd(i, shape='side') {
     ['СКАЧАЙ СЕЙЧАС', 'Рингтон «Мяу-мяу»', '♫'],
     ['ТЫ 1000-Й ГОСТЬ!', 'Забери громкий звонок', '🏆'],
   ]; const a=ads[i%ads.length];
-  return `<button class="ring-ad ${shape} ring-${i%4}" data-ring="${i}" aria-label="Прослушать рингтон">
-    <span class="ad-spark">${a[2]}</span><strong>${a[0]}</strong><em>${a[1]}</em>
-    <span class="equalizer"><i></i><i></i><i></i><i></i></span><small>${state.playing===i?'■ СТОП':'▶ СЛУШАТЬ'}</small>
+  const mode = concepts[state.concept].id;
+  const labels = {win98:'RINGTONE.EXE',acid:'100% FREE*',y2k:'SOUND DROP',tv:'РЕКЛАМА',os:'NOW PLAYING',arcade:'BONUS STAGE',scrap:'ВЫРЕЖИ И СОХРАНИ',brutal:'РИНГТОН №'+(i+1),warez:`track_0${i+1}.mp3`,chaos:'НЕ НАЖИМАЙ'};
+  return `<button class="ring-ad ${shape} ring-${i%4} ad-${mode}" data-ring="${i}" aria-label="Прослушать рингтон">
+    <span class="ad-format">${labels[mode]}</span><span class="ad-spark">${a[2]}</span><strong>${a[0]}</strong><em>${a[1]}</em>
+    <span class="equalizer"><i></i><i></i><i></i><i></i></span><small>${state.playing===i?'■ СТОП':'▶ СЛУШАТЬ'}</small><span class="ad-meta">00:${18+i*3} · MP3</span>
   </button>`;
 }
 
@@ -69,13 +73,22 @@ function priceGrid(p) {
 
 function productCard(p, i) {
   const expanded = state.expanded === p.id;
-  return `<article class="product-card ${expanded?'expanded':''}" style="--i:${i}">
-    <button class="card-main" data-expand="${p.id}">
-      <span class="badge badge-${p.badge==='МАЛО'?'low':'hot'}">${p.badge}</span>
-      ${art(p)}
-      <span class="card-copy"><small>ОТКРЫТЬ КАРТОЧКУ ↗</small><h3>${p.name}</h3><p>Та самая открытка для того самого человека. Плотная бумага, мем внутри.</p><b>от ${money(p.price)}</b></span>
-    </button>
-    <div class="card-details">
+  const mode = concepts[state.concept].id;
+  const templates = {
+    win98: `<div class="win-title"><span>📄 NM_00${p.id}.CARD</span><i>— □ ×</i></div><button class="card-main win-file" data-expand="${p.id}">${art(p)}<span class="win-properties"><b>${p.name}</b><span>Тип: поздравительная открытка</span><span>Размер: 105 × 148 мм</span><span>Состояние: <i>в наличии</i></span><strong>${money(p.price)}</strong><em>Открыть свойства…</em></span></button>`,
+    acid: `<div class="acid-strip"><b>!!! ${p.badge} !!!</b><span>ТОВАР №000${p.id}</span><marquee>ЛУЧШАЯ ЦЕНА В РУНЕТЕ ★ ДОСТАВКА В ТВОЙ ГОРОД</marquee></div><button class="card-main acid-row" data-expand="${p.id}">${art(p)}<span class="acid-data"><small>[ОТКРЫТЬ]</small><h3>${p.name}</h3><p>КРУТАЯ ОТКРЫТКА ДЛЯ РЕАЛЬНЫХ ДРУЗЕЙ!!!</p><strong>${money(p.price)}</strong><u>ПОДРОБНЕЕ &gt;&gt;&gt;</u></span></button>`,
+    y2k: `<button class="card-main y2k-editorial" data-expand="${p.id}"><span class="y2k-number">0${i+1}</span>${art(p)}<span class="y2k-copy"><small>LIMITED MEME OBJECT</small><h3>${p.name}</h3><p>Analog feelings for digital people.</p><span class="y2k-pill">${p.badge}</span><strong>${money(p.price)}</strong><i>DISCOVER ↗</i></span></button>`,
+    tv: `<div class="tv-channel"><b>КАНАЛ ${i+1}</b><span>СЕЙЧАС В ЭФИРЕ</span><i>● REC</i></div><button class="card-main tv-show" data-expand="${p.id}"><div class="tv-screen">${art(p)}<span>16:9</span></div><span class="tv-pitch"><small>ТОВАР ДНЯ</small><h3>${p.name}</h3><p>ЗВОНИТЕ ПРЯМО СЕЙЧАС! Количество ограничено.</p><strong>${money(p.price)}</strong><em>СМОТРЕТЬ ПРЕДЛОЖЕНИЕ →</em></span></button>`,
+    os: `<button class="card-main os-app" data-expand="${p.id}"><span class="os-icon">${art(p,true)}<i>${p.badge}</i></span><b>${p.name.replace('Открытка ','')}</b><small>${money(p.price)} · INSTALLED</small></button><div class="os-dock-info"><span>Quick Look</span><span>♡</span><span>•••</span></div>`,
+    arcade: `<div class="arcade-top"><span>HIGH SCORE</span><b>00${p.price}00</b></div><button class="card-main arcade-machine" data-expand="${p.id}"><div class="arcade-screen">${art(p)}<span>LEVEL ${i+1}</span></div><div class="arcade-controls"><i></i><span>● ●</span></div><h3>${p.name}</h3><strong>${money(p.price)}</strong><em>PRESS START</em></button>`,
+    scrap: `<button class="card-main scrap-polaroid" data-expand="${p.id}"><span class="scrap-tape"></span>${art(p)}<span class="scrap-note"><small># находка 0${i+1}</small><h3>${p.name}</h3><p>«Увидел и сразу вспомнил про тебя»</p><strong>${money(p.price)}</strong><i>посмотреть ↗</i></span><span class="scrap-sticker">${p.badge}!</span></button>`,
+    brutal: `<button class="card-main brutal-story" data-expand="${p.id}"><span class="brutal-no">0${i+1}</span><div class="brutal-image">${art(p)}</div><span class="brutal-copy"><small>ОБЪЕКТ / NM-00${p.id}</small><h3>${p.name}</h3><p>Бумага. Мем. Никакой лишней сентиментальности.</p><strong>${money(p.price)}</strong><i>КУПИТЬ ЭТО →</i></span></button>`,
+    warez: `<div class="warez-head"><span>NM_RELEASE_00${p.id}</span><i>verified ✓</i></div><button class="card-main warez-file" data-expand="${p.id}"><span class="file-icon">${p.emoji}<small>.CARD</small></span><span class="file-name"><b>${p.name}</b><small>/gifts/postcards/2026/</small></span><span class="file-size">${120+i*37} KB</span><span class="file-seeds">▲ ${83-i*9}</span><strong>${money(p.price)}</strong><em>[ DETAILS ]</em></button>`,
+    chaos: `<button class="card-main chaos-tile chaos-tile-${i+1}" data-expand="${p.id}"><span class="chaos-label">0${i+1} / ${p.badge}</span>${art(p)}<span class="chaos-copy"><h3>${p.name}</h3><p>${i%2?'Для неловких, но важных моментов.':'Мем вместо тысячи слов.'}</p><strong>${money(p.price)}</strong><i>РАСКРЫТЬ +</i></span><span class="chaos-mark">${['WOW','LOL','OMG','OK'][i]}</span></button>`
+  };
+  return `<article class="product-card card-${mode} ${expanded?'expanded':''}" style="--i:${i}">
+    ${templates[mode]}
+    <div class="card-details details-${mode}">
       <div class="detail-media"><div class="video-fake"><span>▶</span><small>ВИДЕО ОТКРЫТИЯ · 0:08</small></div><p>В наличии · отправим сегодня</p></div>
       <div class="detail-copy"><small>АРТИКУЛ NM-00${p.id}</small><h3>${p.name}</h3><p>Можно подписать вручную, положить к подарку или отправить тому, кто понимает мемы без объяснений.</p><ul><li>формат А6</li><li>плотность 300 г/м²</li><li>крафт-конверт в комплекте</li></ul></div>
       <div class="detail-buy">${priceGrid(p)}</div>
@@ -86,7 +99,9 @@ function productCard(p, i) {
 
 function hero(c) {
   const p = products[state.hero % products.length];
-  return `<section class="hero">
+  const heroLabels={win98:'Welcome.exe',acid:'ЛУЧШИЙ САЙТ РУНЕТА',y2k:'DROP 01 / 2026',tv:'● ПРЯМОЙ ЭФИР',os:'NORMAS.OS / HOME',arcade:'INSERT COIN',scrap:'МОЯ КОЛЛЕКЦИЯ',brutal:'NO CRINGE.',warez:'NORMAS MEMAS PORTAL v2.6',chaos:'CONTROLLED CHAOS™'};
+  return `<section class="hero hero-${c.id}">
+    <div class="hero-mode-label">${heroLabels[c.id]}</div>
     <div class="hero-copy">
       <span class="eyebrow">★ ОФИЦИАЛЬНАЯ МЕМНАЯ ЛАВКА ★</span>
       <div class="logo-lockup"><span>НОРМАС</span><span>МЕМАС</span></div>
@@ -103,7 +118,7 @@ function hero(c) {
       <button class="hero-arrow next" data-hero="1">›</button>
       <div class="hero-dots">${products.map((_,i)=>`<button class="${i===state.hero?'active':''}" data-hero-index="${i}"></button>`).join('')}</div>
     </div>
-    <div class="hero-ads">${ringtoneAd(0,'mini')}${ringtoneAd(1,'mini')}</div>
+    <div class="hero-ads hero-ads-${c.id}">${ringtoneAd(0,'mini')}${ringtoneAd(1,'mini')}</div>
   </section>`;
 }
 
@@ -123,12 +138,12 @@ function render() {
     ${chrome(c)}
     <div class="ticker"><span>✦ БЕСПЛАТНЫЙ ЛОЛ К КАЖДОМУ ЗАКАЗУ ✦ ОТКРЫТКИ, КОТОРЫЕ НЕ СТЫДНО ДАРИТЬ ✦ РИНГТОНЫ ПО 20 ₽ ✦</span></div>
     ${hero(c)}
-    <div class="shop-layout">
+    <div class="shop-layout layout-${c.id}">
       <aside class="ad-rail left">${ringtoneAd(2)}${ringtoneAd(3)}${ringtoneAd(1)}</aside>
       <section class="catalog" id="catalog">
         <div class="catalog-head"><span>КАТАЛОГ_2026</span><h2>Подарки для своих</h2><p>Нажми на карточку — она раскроется прямо здесь.</p></div>
         <div class="mobile-ad">${ringtoneAd(2,'wide')}</div>
-        <div class="products">${products.map(productCard).join('')}</div>
+        <div class="products products-${c.id}">${products.map(productCard).join('')}</div>
         <div class="bottom-banner">${ringtoneAd(3,'wide')}<div><small>ДОШЁЛ ДО КОНЦА?</small><h2>Это знак купить открытку.</h2><button data-scroll>НАВЕРХ ↑</button></div></div>
       </section>
       <aside class="ad-rail right">${ringtoneAd(0)}${ringtoneAd(2)}${ringtoneAd(3)}</aside>
@@ -141,8 +156,8 @@ function render() {
 }
 
 function bind() {
-  document.querySelectorAll('[data-concept]').forEach(b=>b.onclick=()=>{state.concept=+b.dataset.concept;state.expanded=1;render();window.scrollTo({top:0,behavior:'smooth'});});
-  document.querySelector('[data-next]').onclick=()=>{state.concept=(state.concept+1)%10;render();window.scrollTo({top:0,behavior:'smooth'});};
+  document.querySelectorAll('[data-concept]').forEach(b=>b.onclick=()=>{state.concept=+b.dataset.concept;state.expanded=0;history.replaceState(null,'',`?design=${state.concept+1}`);render();window.scrollTo({top:0,behavior:'smooth'});});
+  document.querySelector('[data-next]').onclick=()=>{state.concept=(state.concept+1)%10;history.replaceState(null,'',`?design=${state.concept+1}`);render();window.scrollTo({top:0,behavior:'smooth'});};
   document.querySelectorAll('[data-expand]').forEach(b=>b.onclick=()=>{state.expanded=+b.dataset.expand;render();setTimeout(()=>document.querySelector('.product-card.expanded')?.scrollIntoView({behavior:'smooth',block:'center'}),20);});
   document.querySelectorAll('[data-buy]').forEach(b=>b.onclick=()=>{state.cart++;state.toast='Товар добавлен! Нормас.';render();setTimeout(()=>{state.toast='';render()},2200);});
   document.querySelectorAll('[data-ring]').forEach(b=>b.onclick=()=>{const n=+b.dataset.ring;state.playing=state.playing===n?null:n;render();});
