@@ -188,6 +188,77 @@ function pixelStandalonePage(c) {
     </header>
 
     <section class="px-hero">
+      <div class="px-meme-cast" aria-hidden="true">
+        <div class="px-meme px-meme-erzhan">
+          <em>ЕРЖАН, ВСТАВАЙ</em>
+          <svg viewBox="0 0 48 34" shape-rendering="crispEdges">
+            <path d="M3 24h39v3h3v5H2v-6h1z" fill="#173e4b"/><path d="M5 23h35v3h3v4H4v-5h1z" fill="#54d9ff"/>
+            <path d="M6 20h5v-4h7v-2h12v3h6v9H8v-2H4v-7h2z" fill="#332017"/>
+            <path d="M8 19h6v-3h14v2h8v7H10v-2H6v-5h2z" fill="#70452d"/>
+            <path d="M13 17h12v2h7v5H14v-2H9v-3h4z" fill="#8e5a3a"/>
+            <path d="M29 9h3V6h10v3h3v13h-3v3H29v-2h-3V12h3z" fill="#352117"/>
+            <path d="M31 9h10v2h2v10h-3v2h-9v-2h-3v-8h3z" fill="#815033"/>
+            <rect x="27" y="12" width="4" height="6" fill="#a36b47"/><rect x="42" y="12" width="4" height="6" fill="#a36b47"/>
+            <path d="M31 15h11v6H31z" fill="#c58b62"/><rect x="33" y="14" width="3" height="2" fill="#1c1511"/><rect x="39" y="14" width="3" height="2" fill="#1c1511"/>
+            <rect x="34" y="18" width="2" height="1" fill="#5a3424"/><rect x="39" y="18" width="2" height="1" fill="#5a3424"/><rect x="36" y="20" width="4" height="1" fill="#3a2219"/>
+            <path d="M5 17H2v-3H0V7h3v6h3z" fill="#3c2519"/><path d="M4 15H2V9h2v3h3v4z" fill="#8f5b3b"/>
+            <rect x="17" y="10" width="3" height="2" fill="#f6f4ee"/><rect x="21" y="6" width="3" height="2" fill="#f6f4ee"/><rect x="24" y="3" width="2" height="2" fill="#54d9ff"/>
+            <rect x="12" y="25" width="15" height="1" fill="#90e8ff"/><rect x="6" y="30" width="35" height="1" fill="#286577"/>
+          </svg>
+        </div>
+        <div class="px-meme px-meme-zhdun">
+          <em>ЖДУН</em>
+          <svg viewBox="0 0 38 46" shape-rendering="crispEdges">
+            <path d="M11 3h16v3h4v12h3v17h-3v8H7v-8H4V18h3V6h4z" fill="#56545d"/>
+            <path d="M13 4h12v2h4v12h3v15h-4v7H10v-7H6V19h3V7h4z" fill="#aaa7b0"/>
+            <path d="M14 6h10v2h3v8h-4v2H12v-2H9V9h5z" fill="#c3c0c7"/>
+            <rect x="12" y="11" width="3" height="3" fill="#f0eef0"/><rect x="23" y="11" width="3" height="3" fill="#f0eef0"/>
+            <rect x="13" y="12" width="2" height="2" fill="#18171b"/><rect x="23" y="12" width="2" height="2" fill="#18171b"/>
+            <path d="M16 15h8v4h3v11h-3v3H14v-3h3z" fill="#bebbc2"/><path d="M19 16h4v13h-2v2h-4v-3h2z" fill="#d0cdd2"/>
+            <rect x="17" y="32" width="7" height="2" fill="#8d8a94"/><rect x="11" y="20" width="3" height="10" fill="#9b98a2"/>
+            <path d="M7 26H3v3H0v6h8v-2h7v-5h-4v2H7z" fill="#bbb8c0"/><path d="M31 26h4v3h3v6h-8v-2h-7v-5h4v2h4z" fill="#bbb8c0"/>
+            <rect x="2" y="32" width="10" height="2" fill="#d1ced3"/><rect x="26" y="32" width="10" height="2" fill="#d1ced3"/>
+            <path d="M7 38h11v6H4v-4h3z" fill="#85828d"/><path d="M20 38h11v2h3v4H20z" fill="#85828d"/>
+            <rect x="8" y="39" width="7" height="1" fill="#aaa7b0"/><rect x="23" y="39" width="7" height="1" fill="#aaa7b0"/>
+          </svg>
+        </div>
+        <div class="px-meme px-meme-wolf">
+          <em>ЩАС СПОЮ</em>
+          <svg viewBox="0 0 44 44" shape-rendering="crispEdges">
+            <path d="M10 7h4V2h7l3 6h5l3-6h6v7h3v17h-4v3h3v10h-6v4H10v-4H4V28H0V17h4v-5h6z" fill="#292b30"/>
+            <path d="M12 8h4V5h4l3 6h8l3-6h3v7h3v13h-5v4h3v8h-6v4H12v-4H7V27H3v-8h4v-5h5z" fill="#6f747a"/>
+            <path d="M14 10h16v3h5v11h-4v4H13v-3H9V14h5z" fill="#7f848a"/>
+            <path d="M11 13h9v3h-8zM25 13h9v3h-8z" fill="#4a4d52"/>
+            <rect x="14" y="16" width="5" height="4" fill="#efc958"/><rect x="26" y="16" width="5" height="4" fill="#efc958"/>
+            <rect x="16" y="17" width="2" height="3" fill="#16171a"/><rect x="27" y="17" width="2" height="3" fill="#16171a"/>
+            <path d="M14 22h17v6h-3v3H17v-2h-3z" fill="#b5b7b8"/><rect x="20" y="21" width="7" height="4" fill="#25262a"/>
+            <rect x="22" y="25" width="3" height="2" fill="#f2efe8"/><rect x="17" y="28" width="11" height="1" fill="#55585d"/>
+            <path d="M11 29h22v10H11z" fill="#676b70"/><path d="M14 30h15v9H14z" fill="#7d8185"/>
+            <path d="M7 25H2v3H0v6h8v-3h6v-5h-3v2H7z" fill="#8f9397"/><path d="M36 24h5v3h3v6h-8v-3h-6v-5h3v2h3z" fill="#8f9397"/>
+            <rect x="12" y="39" width="8" height="4" fill="#45484c"/><rect x="25" y="39" width="8" height="4" fill="#45484c"/>
+            <rect x="17" y="33" width="2" height="2" fill="#92969a"/><rect x="26" y="34" width="2" height="2" fill="#5a5d61"/>
+          </svg>
+        </div>
+        <div class="px-meme px-meme-vodka">
+          <em>МЫ ДОМОЙ ЛЕТИМ</em>
+          <svg viewBox="0 0 56 44" shape-rendering="crispEdges">
+            <path d="M4 7h3V4h17v3h3v17h-3v17H5V25H1V14h3z" fill="#17181c"/>
+            <path d="M7 8h15v3h3v11h-4v4H8v-3H5V12h2z" fill="#d2a07f"/>
+            <path d="M5 5h19v4h3v5h-6v-3H8v4H4V8h1z" fill="#7f3429"/><rect x="8" y="7" width="12" height="2" fill="#a54d3c"/>
+            <rect x="9" y="15" width="3" height="3" fill="#f6f0e9"/><rect x="19" y="15" width="3" height="3" fill="#f6f0e9"/><rect x="10" y="16" width="2" height="2" fill="#17171a"/><rect x="19" y="16" width="2" height="2" fill="#17171a"/>
+            <rect x="13" y="21" width="7" height="2" fill="#984c48"/><rect x="15" y="20" width="4" height="1" fill="#6c3432"/>
+            <path d="M5 26h18v15H5z" fill="#24262c"/><path d="M8 27h6v12H8z" fill="#33363d"/><rect x="2" y="27" width="6" height="7" fill="#d2a07f"/>
+            <path d="M30 7h3V4h15v3h3v17h-3v17H29V25h-3V11h4z" fill="#1c2630"/>
+            <path d="M33 8h13v2h3v12h-4v3H33v-3h-3V11h3z" fill="#ddb18e"/>
+            <path d="M31 5h17v3h3v5h-4V9H33v4h-4V8h2z" fill="#48372f"/><rect x="34" y="7" width="12" height="2" fill="#655047"/>
+            <rect x="34" y="15" width="3" height="2" fill="#17171a"/><rect x="43" y="15" width="3" height="2" fill="#17171a"/><rect x="37" y="21" width="6" height="1" fill="#996a58"/>
+            <path d="M29 25h20v16H29z" fill="#31597c"/><rect x="34" y="25" width="10" height="8" fill="#f1f0e9"/><path d="M37 25h4v7h-4z" fill="#d5d6d3"/>
+            <path d="M49 17h4v-5h2v4h1v17h-9V20h2z" fill="#cbd8dd"/><rect x="50" y="14" width="4" height="5" fill="#54d9ff"/><rect x="49" y="23" width="6" height="8" fill="#edf2f3"/><rect x="51" y="25" width="2" height="5" fill="#9edcf0"/>
+            <rect x="8" y="41" width="7" height="3" fill="#0e0f12"/><rect x="17" y="41" width="6" height="3" fill="#0e0f12"/><rect x="32" y="41" width="7" height="3" fill="#152739"/><rect x="43" y="41" width="6" height="3" fill="#152739"/>
+            <rect x="25" y="3" width="2" height="4" fill="#ff3b30"/><rect x="26" y="2" width="1" height="1" fill="#f6f4ee"/>
+          </svg>
+        </div>
+      </div>
       <aside class="px-rail">
         <span class="active">01<br><b>DROP</b></span><span>02<br><b>ITEMS</b></span><span>03<br><b>AUDIO</b></span><span>04<br><b>ORDER</b></span>
         <i>SCROLL TO EXPLORE</i>
@@ -200,6 +271,22 @@ function pixelStandalonePage(c) {
         <div><button data-scroll>ENTER THE STORE</button><span>↓ 09 ITEMS ONLINE</span></div>
       </div>
       <div class="px-stage">
+        <div class="px-cameo-peeker" aria-hidden="true">
+          <span>ШЛЁПА</span>
+          <svg viewBox="0 0 40 36" shape-rendering="crispEdges">
+            <path d="M7 8V2h4V0h4v9h10V0h4v2h4v7h3v22h-5v4H9v-4H4V11h3z" fill="#382820"/>
+            <path d="M9 9V4h3v7h16V4h3v6h3v19h-5v4H11v-4H6V12h3z" fill="#b8784c"/>
+            <path d="M11 12h18v3h4v13h-5v3H12v-3H8V15h3z" fill="#c88d5b"/>
+            <path d="M9 4h3v8H9zM28 4h3v8h-3z" fill="#6c402d"/><rect x="10" y="1" width="2" height="5" fill="#211b18"/><rect x="29" y="1" width="2" height="5" fill="#211b18"/>
+            <path d="M12 15h6v7h-6zM23 15h6v7h-6z" fill="#ead8c4"/><rect x="14" y="17" width="3" height="5" fill="#171513"/><rect x="24" y="17" width="3" height="5" fill="#171513"/>
+            <rect x="15" y="17" width="1" height="2" fill="#f6f4ee"/><rect x="25" y="17" width="1" height="2" fill="#f6f4ee"/>
+            <path d="M15 24h11v6H15z" fill="#efddc8"/><rect x="18" y="23" width="5" height="3" fill="#3b241b"/><rect x="19" y="24" width="3" height="1" fill="#8b5a42"/>
+            <rect x="17" y="28" width="3" height="1" fill="#8d604a"/><rect x="22" y="28" width="3" height="1" fill="#8d604a"/>
+            <rect x="7" y="22" width="8" height="1" fill="#6e4835"/><rect x="26" y="22" width="8" height="1" fill="#6e4835"/><rect x="4" y="20" width="3" height="1" fill="#d8a372"/><rect x="34" y="20" width="3" height="1" fill="#d8a372"/>
+            <path d="M10 31h8v4h-9v-2H7v-2zM23 31h8v2h-2v2h-9v-4z" fill="#9f633f"/>
+            <rect x="11" y="13" width="3" height="1" fill="#e3b27d"/><rect x="27" y="13" width="3" height="1" fill="#e3b27d"/>
+          </svg>
+        </div>
         <div class="px-stage-top"><span>FEATURED DROP</span><b>NM-${String(selected.id).padStart(3,'0')}</b><i>● LIVE</i></div>
         <button class="px-stage-arrow left" data-hero="-1">←</button>
         <div class="px-stage-art">${art(selected)}<span class="px-stage-grid"></span></div>
@@ -214,7 +301,7 @@ function pixelStandalonePage(c) {
       </aside>
     </section>
 
-    <section class="px-audio-deck">
+    <section class="px-audio-deck" id="audio">
       <div class="px-section-code">AUDIO<br>LOOT</div>
       ${pixelSoundModule(0)}${pixelSoundModule(1)}${pixelSoundModule(2)}
     </section>
@@ -224,7 +311,7 @@ function pixelStandalonePage(c) {
       <div class="px-inventory-grid">${products.map(pixelInventoryCard).join('')}</div>
     </section>
 
-    <section class="px-inspect">
+    <section class="px-inspect" id="inspect">
       <header><span>INSPECT MODE</span><b>ITEM ${String(selected.id).padStart(3,'0')}</b><i>UPDATED NOW</i></header>
       <div class="px-inspect-media"><div class="px-video"><span>▶</span><small>OPENING_SEQUENCE.MP4</small></div><div class="px-thumbs">${art(selected,true)}${art(products[(selected.id)%products.length],true)}</div></div>
       <div class="px-inspect-copy"><small>${selected.badge} · CARD ARTIFACT</small><h2>${selected.name}</h2><p>Плотная открытка с мемом внутри. Подходит для поздравления, поддержки и ситуаций, когда нормальные слова уже закончились.</p><dl><div><dt>FORMAT</dt><dd>A6</dd></div><div><dt>PAPER</dt><dd>300 g/m²</dd></div><div><dt>PACKAGE</dt><dd>CRAFT</dd></div></dl></div>
@@ -236,7 +323,7 @@ function pixelStandalonePage(c) {
       <div class="px-route-line"><article><span>01</span><i>▣</i><b>CHOOSE</b><p>Добавьте предмет</p></article><article><span>02</span><i>⌖</i><b>ROUTE</b><p>Выберите ПВЗ</p></article><article><span>03</span><i>◆</i><b>VERIFY</b><p>Пройдите капчу</p></article><article><span>04</span><i>✓</i><b>RECEIVE</b><p>Получите трек</p></article></div>
     </section>
 
-    <section class="px-checkout">
+    <section class="px-checkout" id="checkout">
       <div class="px-checkout-copy"><small>QUICK CHECKOUT / NO ACCOUNT</small><h2>READY TO<br>COMPLETE<br>THE QUEST?</h2><p>Карты, СБП и ЮMoney. Данные заказа сохраняются, даже если мемная капча отправит вас изучать классику.</p></div>
       <div class="px-terminal">
         <div><span>ORDER_TERMINAL</span><i>SECURE ●</i></div>
@@ -285,7 +372,23 @@ function render() {
   bind();
 }
 
+function placePixelMemes() {
+  if (!document.body.classList.contains('theme-pixel')) return;
+  const placements = [
+    ['.px-meme-erzhan', '.px-audio-deck'],
+    ['.px-meme-zhdun', '.px-inventory'],
+    ['.px-meme-wolf', '.px-inspect'],
+    ['.px-meme-vodka', '.px-checkout']
+  ];
+  placements.forEach(([meme, section]) => {
+    const character = document.querySelector(meme);
+    const target = document.querySelector(section);
+    if (character && target) target.appendChild(character);
+  });
+}
+
 function bind() {
+  placePixelMemes();
   document.querySelectorAll('[data-concept]').forEach(b=>b.onclick=()=>{state.concept=+b.dataset.concept;state.expanded=0;history.replaceState(null,'',`?design=${state.concept+1}`);render();window.scrollTo({top:0,behavior:'smooth'});});
   document.querySelector('[data-next]').onclick=()=>{state.concept=(state.concept+1)%concepts.length;history.replaceState(null,'',`?design=${state.concept+1}`);render();window.scrollTo({top:0,behavior:'smooth'});};
   document.querySelectorAll('[data-expand]').forEach(b=>b.onclick=()=>{state.expanded=+b.dataset.expand;render();setTimeout(()=>{const target=document.querySelector('.product-card.expanded')||document.querySelector('.px-inspect');target?.scrollIntoView({behavior:'smooth',block:'center'})},20);});

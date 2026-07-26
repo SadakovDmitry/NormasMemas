@@ -401,3 +401,369 @@
 @media(prefers-reduced-motion:reduce){
   .px-ambient i,.px-stage:before{animation:none}
 }
+
+/* Pixel Noir v5 — спокойный минималистичный первый экран */
+.pixel-standalone:before{opacity:.07;-webkit-mask-image:linear-gradient(to bottom,#0000 0,#000 32%,#0000 68%);mask-image:linear-gradient(to bottom,#0000 0,#000 32%,#0000 68%)}
+.px-ambient i:nth-child(3){display:none}
+.px-ambient i:nth-child(1),.px-ambient i:nth-child(2){opacity:.23;filter:blur(28px)}
+.px-header{position:relative;top:auto;height:68px;grid-template-columns:1fr auto auto;box-shadow:none;background:#0b0b0ed9}
+.px-live{display:none}
+.px-location{opacity:.72}
+.px-cart{height:42px;background:#111116;border-color:#ffffff12}
+.px-spectrum{display:none!important}
+.px-hero{min-height:calc(100vh - 154px);grid-template-columns:minmax(300px,.64fr) minmax(610px,1.36fr);grid-template-rows:1fr;gap:72px;padding-top:64px;padding-bottom:94px;align-items:center}
+.px-hero-copy{grid-column:1;grid-row:1}
+.px-hero-copy>small{opacity:.72}
+.px-hero-copy h1{margin:30px 0 26px;font-size:clamp(39px,4.25vw,64px);line-height:1.16}
+.px-hero-copy h1 em{text-shadow:2px 0 0 #54d9ff}
+.px-hero-copy p{max-width:430px;color:#85838a;font-size:14px;line-height:1.75}
+.px-hero-copy>div{margin-top:29px;gap:16px}
+.px-hero-copy>div>span{display:none}
+.px-hero-copy button{padding:15px 20px;box-shadow:none}
+.px-stage{grid-column:2;grid-row:1;min-height:600px;box-shadow:0 28px 80px #0008,0 0 0 1px #54d9ff0b}
+.px-stage:before{opacity:.18}
+.px-stage-art:after{display:none}
+.px-stage-top span,.px-stage-top i{opacity:.58}
+.px-stage-bottom{padding-right:220px}
+.px-stage-bottom>strong{display:none}
+.px-buy-panel{grid-column:2;grid-row:1;z-index:8;align-self:end;justify-self:end;width:440px;min-height:0;margin:0 24px -24px 0;padding:12px;display:grid;grid-template-columns:auto 92px 1fr;align-items:center;gap:16px;border-radius:16px;border-color:#ffffff12;background:#101014ed;box-shadow:0 18px 55px #000a;backdrop-filter:blur(18px)}
+.px-stock{padding:0 15px 0 2px;border:0;border-right:1px solid #ffffff0d}
+.px-stock small,.px-stock span{display:none}
+.px-stock b{margin:0;font-size:7px;white-space:nowrap}
+.px-price-list{padding:0}
+.px-price-list>small,.px-price-list p:not(:first-of-type),.px-price-list p:first-of-type span{display:none}
+.px-price-list p:first-of-type{padding:0;border:0;display:block;color:var(--px-cyan)}
+.px-price-list p:first-of-type b{font-size:17px;white-space:nowrap}
+.px-primary-buy{margin:0;padding:15px 14px;font-size:7px;white-space:nowrap;box-shadow:none}
+.px-primary-buy span{display:none}
+.px-delivery{display:none}
+.px-audio-deck{margin-top:36px}
+
+@media(max-width:1180px){
+  .px-hero{grid-template-columns:minmax(270px,.7fr) minmax(470px,1.3fr);gap:38px}
+  .px-hero-copy h1{font-size:clamp(36px,4.8vw,51px)}
+  .px-buy-panel{grid-column:2;grid-row:1;width:410px}
+}
+@media(max-width:860px){
+  .px-location{display:none}
+  .px-header{grid-template-columns:1fr auto}
+  .px-hero{display:block;min-height:0;padding:58px 20px 88px}
+  .px-hero-copy{max-width:610px;margin-bottom:56px}
+  .px-stage{margin:0;min-height:540px}
+  .px-buy-panel{width:calc(100% - 40px);margin:0 20px -25px;transform:none}
+}
+@media(max-width:720px){
+  .pixel-standalone{width:100vw;max-width:100vw;overflow:hidden}
+  .px-header{top:auto;height:58px}
+  .px-hero{width:100%;padding:48px 14px 76px}
+  .px-hero-copy{max-width:calc(100vw - 28px)}
+  .px-hero-copy h1{font-size:34px}
+  .px-hero-copy p{display:none}
+  .px-stage{width:calc(100vw - 28px);max-width:calc(100vw - 28px);min-width:0;margin:0;min-height:470px}
+  .px-stage-art,.px-stage-art .product-art{min-width:0;max-width:100%;width:auto}
+  .px-stage-arrow.left{left:6px}
+  .px-stage-arrow.right{right:6px}
+  .px-stage-bottom{padding-right:18px}
+  .px-stage-bottom>div{min-width:0}
+  .px-stage-bottom h2{font-size:9px;overflow-wrap:anywhere}
+  .px-buy-panel{width:calc(100% - 18px);margin:-12px 9px 0;display:grid;grid-template-columns:70px minmax(0,1fr);gap:11px}
+  .px-stock{display:none}
+  .px-primary-buy{width:100%;min-width:0;justify-content:center;font-size:6px;white-space:normal}
+  .px-audio-deck{margin-top:22px}
+}
+
+/* Pixel Noir v6 — редкие игровые cameo, не перегружающие интерфейс */
+.px-hero{position:relative}
+.theme-pixel .px-alert{display:none}
+.px-cameo-runner{position:absolute;z-index:12;left:-90px;bottom:28px;width:62px;height:46px;pointer-events:none;opacity:0;animation:pxRunner 16s linear infinite;filter:drop-shadow(0 7px 10px #0009)}
+.px-cameo-runner svg{display:block;width:55px;height:auto;image-rendering:pixelated}
+.px-cameo-runner>span{position:absolute;left:0;bottom:100%;width:max-content;margin-bottom:3px;color:var(--px-red);font:6px 'Press Start 2P'}
+.px-cameo-runner .px-leg-a{animation:pxLegA .24s steps(1) infinite}
+.px-cameo-runner .px-leg-b{animation:pxLegB .24s steps(1) infinite}
+@keyframes pxRunner{0%,62%{left:-90px;opacity:0}64%{opacity:1}88%{left:calc(100% + 25px);opacity:1}89%,100%{left:calc(100% + 25px);opacity:0}}
+@keyframes pxLegA{50%{transform:translateY(-2px)}}
+@keyframes pxLegB{50%{transform:translateY(2px)}}
+.px-cameo-peeker{position:absolute;z-index:10;top:-41px;right:76px;width:46px;height:40px;pointer-events:none;filter:drop-shadow(0 7px 12px #000b);animation:pxPeek 9s steps(5,end) infinite}
+.px-cameo-peeker svg{display:block;width:46px;height:auto;image-rendering:pixelated}
+.px-cameo-peeker>span{position:absolute;right:-7px;top:-7px;color:var(--px-red);font:8px 'Press Start 2P';opacity:0;animation:pxQuestion 9s steps(1) infinite}
+.px-stage:hover .px-cameo-peeker{animation:pxPeekHello .55s steps(4,end) forwards}
+.px-stage:hover .px-cameo-peeker>span{opacity:1;animation:none}
+@keyframes pxPeek{0%,67%,100%{transform:translateY(0)}72%,89%{transform:translateY(30px)}94%{transform:translateY(0)}}
+@keyframes pxPeekHello{to{transform:translateY(31px) rotate(4deg)}}
+@keyframes pxQuestion{0%,71%,95%,100%{opacity:0}72%,94%{opacity:1}}
+@media(max-width:720px){.px-cameo-runner{bottom:35px;transform:scale(.82)}.px-cameo-peeker{right:54px}}
+@media(prefers-reduced-motion:reduce){.px-cameo-runner{display:none}.px-cameo-peeker{top:-11px;animation:none}.px-cameo-peeker>span{display:none}}
+
+/* Pixel Noir v7 — шесть персонажей из мем-культуры Рунета */
+.px-meme-cast{position:absolute;z-index:11;inset:0;overflow:hidden;pointer-events:none}
+.px-meme{position:absolute;opacity:0;pointer-events:none;filter:drop-shadow(0 8px 13px #000b)}
+.px-meme svg{display:block;image-rendering:pixelated}
+.px-meme em{position:absolute;width:max-content;color:#f6f4ee;font:6px 'Press Start 2P';font-style:normal;text-shadow:2px 2px 0 #000}
+.px-meme-natasha{top:-3px;left:44%;animation:pxNatashaCats 36s steps(5,end) 6s infinite}
+.px-meme-natasha svg{width:88px}
+.px-meme-natasha em{left:50%;bottom:-16px;transform:translateX(-50%);color:var(--px-red)}
+.px-meme-zhdun{right:-6px;top:43%;animation:pxZhdunWaits 36s steps(5,end) 18s infinite}
+.px-meme-zhdun svg{width:63px}
+.px-meme-zhdun em{right:10px;top:-13px;color:var(--px-cyan)}
+.px-meme-rybov{left:-76px;bottom:145px;animation:pxRybovWalk 36s steps(7,end) 24s infinite}
+.px-meme-rybov svg{width:72px}
+.px-meme-rybov em{left:7px;top:-14px;color:var(--px-cyan)}
+.px-meme-fox{left:-12px;top:31%;animation:pxFoxShock 36s steps(5,end) 30s infinite}
+.px-meme-fox svg{width:54px}
+.px-meme-fox em{left:38px;top:4px;color:var(--px-red)}
+
+.px-cameo-runner{animation:pxMemeRun 36s linear infinite}
+.px-cameo-peeker{top:-47px;animation:pxFloppaPeek 36s steps(5,end) 12s infinite}
+.px-cameo-peeker>span{right:-7px;top:-10px;width:max-content;color:var(--px-red);font-size:6px;animation:pxFloppaLabel 36s steps(1) 12s infinite}
+
+@keyframes pxMemeRun{
+  0%{left:-90px;opacity:0}
+  1%{opacity:1}
+  13%{left:calc(100% + 25px);opacity:1}
+  14%,100%{left:calc(100% + 25px);opacity:0}
+}
+@keyframes pxNatashaCats{
+  0%{opacity:0;transform:translateY(-70px)}
+  2%,11%{opacity:1;transform:translateY(24px)}
+  14%,100%{opacity:0;transform:translateY(-70px)}
+}
+@keyframes pxFloppaPeek{
+  0%{opacity:0;transform:translateY(0)}
+  2%,11%{opacity:1;transform:translateY(34px)}
+  14%,100%{opacity:0;transform:translateY(0)}
+}
+@keyframes pxFloppaLabel{
+  0%,1%,12%,100%{opacity:0}
+  2%,11%{opacity:1}
+}
+@keyframes pxZhdunWaits{
+  0%{opacity:0;transform:translateX(70px)}
+  2%,11%{opacity:1;transform:translateX(-14px)}
+  14%,100%{opacity:0;transform:translateX(70px)}
+}
+@keyframes pxRybovWalk{
+  0%{opacity:0;transform:translateX(0)}
+  2%{opacity:1;transform:translateX(0)}
+  11%{opacity:1;transform:translateX(150px)}
+  14%,100%{opacity:0;transform:translateX(180px)}
+}
+@keyframes pxFoxShock{
+  0%{opacity:0;transform:translateX(-65px) rotate(-7deg)}
+  2%,11%{opacity:1;transform:translateX(17px) rotate(4deg)}
+  14%,100%{opacity:0;transform:translateX(-65px) rotate(-7deg)}
+}
+.px-stage:hover .px-cameo-peeker{opacity:1;animation:pxPeekHello .55s steps(4,end) forwards}
+.px-stage:hover .px-cameo-peeker>span{opacity:1;animation:none}
+
+@media(max-width:720px){
+  .px-meme-cast{inset:0 14px}
+  .px-meme-natasha{left:47%;transform:scale(.78)}
+  .px-meme-zhdun{right:-15px;transform:scale(.75)}
+  .px-meme-fox{top:27%;transform:scale(.76)}
+  .px-meme-rybov{bottom:125px;transform:scale(.78)}
+}
+@media(prefers-reduced-motion:reduce){
+  .px-meme-cast,.px-cameo-runner{display:none}
+  .px-cameo-peeker{display:none}
+}
+
+/* Pixel Noir v8 — выбранная пятёрка, увеличенные спрайты */
+.px-meme em{font-size:8px;line-height:1.45}
+.px-meme-erzhan{left:24%;bottom:-34px;animation:pxErzhanWake 40s steps(7,end) infinite}
+.px-meme-erzhan svg{width:148px}
+.px-meme-erzhan em{left:18px;top:-20px;color:var(--px-red)}
+.px-meme-zhdun{right:-20px;top:44%;animation:pxBigZhdun 40s steps(6,end) 16s infinite}
+.px-meme-zhdun svg{width:118px}
+.px-meme-zhdun em{right:25px;top:-17px;font-size:8px}
+.px-meme-wolf{left:-35px;top:42%;animation:pxWolfSings 40s steps(6,end) 24s infinite}
+.px-meme-wolf svg{width:132px}
+.px-meme-wolf em{left:66px;top:4px;width:92px;color:var(--px-cyan)}
+.px-meme-vodka{right:-24px;top:25%;animation:pxVodkaFlight 40s steps(6,end) 32s infinite}
+.px-meme-vodka svg{width:145px}
+.px-meme-vodka em{right:40px;top:-19px;color:var(--px-red)}
+
+.px-cameo-peeker{top:-94px;right:90px;width:100px;height:88px;animation:pxBigFloppa 40s steps(6,end) 8s infinite}
+.px-cameo-peeker svg{width:100px}
+.px-cameo-peeker>span{right:7px;top:-14px;font-size:8px;animation:pxBigFloppaLabel 40s steps(1) 8s infinite}
+
+@keyframes pxErzhanWake{
+  0%{opacity:0;transform:translateY(90px)}
+  2%,14%{opacity:1;transform:translateY(-36px)}
+  16%,100%{opacity:0;transform:translateY(90px)}
+}
+@keyframes pxBigFloppa{
+  0%{opacity:0;transform:translateY(0)}
+  2%,14%{opacity:1;transform:translateY(74px)}
+  16%,100%{opacity:0;transform:translateY(0)}
+}
+@keyframes pxBigFloppaLabel{
+  0%,1%,15%,100%{opacity:0}
+  2%,14%{opacity:1}
+}
+@keyframes pxBigZhdun{
+  0%{opacity:0;transform:translateX(125px)}
+  2%,14%{opacity:1;transform:translateX(-28px)}
+  16%,100%{opacity:0;transform:translateX(125px)}
+}
+@keyframes pxWolfSings{
+  0%{opacity:0;transform:translateX(-130px) rotate(-5deg)}
+  2%,14%{opacity:1;transform:translateX(34px) rotate(3deg)}
+  16%,100%{opacity:0;transform:translateX(-130px) rotate(-5deg)}
+}
+@keyframes pxVodkaFlight{
+  0%{opacity:0;transform:translateX(155px)}
+  2%,14%{opacity:1;transform:translateX(-36px)}
+  16%,100%{opacity:0;transform:translateX(155px)}
+}
+.px-stage:hover .px-cameo-peeker{opacity:1;animation:pxBigFloppaHover .55s steps(5,end) forwards}
+@keyframes pxBigFloppaHover{to{transform:translateY(74px) rotate(3deg)}}
+
+@media(max-width:720px){
+  .px-meme em{font-size:6px}
+  .px-meme-erzhan{left:12%}
+  .px-meme-erzhan svg{width:112px}
+  .px-meme-zhdun svg{width:92px}
+  .px-meme-wolf svg{width:102px}
+  .px-meme-vodka svg{width:110px}
+  .px-cameo-peeker{right:38px;width:82px;height:74px;top:-78px}
+  .px-cameo-peeker svg{width:82px}
+  @keyframes pxBigFloppaHover{to{transform:translateY(61px) rotate(3deg)}}
+}
+
+/* Pixel Noir v9 — персонажи всегда на экране, движение только от действий */
+.px-meme-cast{overflow:visible}
+.px-meme,.px-cameo-peeker{opacity:1;animation:none}
+.px-meme-erzhan{left:8%;bottom:-26px;transform:translateY(-36px)}
+.px-meme-zhdun{right:-20px;top:44%;transform:translateX(-28px)}
+.px-meme-wolf{left:29%;top:auto;bottom:48px;transform:rotate(3deg)}
+.px-meme-vodka{right:-24px;top:25%;transform:translateX(-36px)}
+.px-cameo-peeker{top:-94px;right:90px;transform:translateY(74px)}
+.px-cameo-peeker>span{opacity:1;animation:none}
+
+.px-hero:has(.px-hero-copy button:hover) .px-meme-erzhan,
+.px-hero:has(.px-hero-copy button:focus-visible) .px-meme-erzhan,
+.px-hero:has(.px-hero-copy button:active) .px-meme-erzhan{
+  animation:pxErzhanReact .8s steps(5,end) infinite alternate;
+}
+.pixel-standalone:has(.px-cart:hover) .px-meme-zhdun,
+.pixel-standalone:has(.px-cart:focus-visible) .px-meme-zhdun,
+.pixel-standalone:has(.px-cart:active) .px-meme-zhdun{
+  animation:pxZhdunReact .9s steps(4,end) infinite alternate;
+}
+.px-hero:has(.px-stage-arrow:hover) .px-meme-wolf,
+.px-hero:has(.px-stage-arrow:focus-visible) .px-meme-wolf,
+.px-hero:has(.px-stage-arrow:active) .px-meme-wolf{
+  animation:pxWolfReact .55s steps(4,end) infinite alternate;
+}
+.px-hero:has(.px-primary-buy:hover) .px-meme-vodka,
+.px-hero:has(.px-primary-buy:focus-visible) .px-meme-vodka,
+.px-hero:has(.px-primary-buy:active) .px-meme-vodka{
+  animation:pxVodkaReact .7s steps(4,end) infinite alternate;
+}
+.px-stage:hover .px-cameo-peeker,
+.px-stage:focus-within .px-cameo-peeker{
+  opacity:1;
+  animation:pxFloppaReact .5s steps(4,end) infinite alternate;
+}
+
+@keyframes pxErzhanReact{
+  to{transform:translateY(-55px) rotate(-3deg)}
+}
+@keyframes pxZhdunReact{
+  to{transform:translateX(-35px) translateY(-8px) rotate(3deg)}
+}
+@keyframes pxWolfReact{
+  to{transform:translateY(-12px) rotate(-4deg)}
+}
+@keyframes pxVodkaReact{
+  to{transform:translateX(-42px) translateY(-9px) rotate(3deg)}
+}
+@keyframes pxFloppaReact{
+  to{transform:translateY(82px) rotate(4deg)}
+}
+
+@media(max-width:720px){
+  .px-meme-cast{inset:0 14px;overflow:hidden}
+  .px-meme-erzhan{left:5%;bottom:-22px;transform:translateY(-29px)}
+  .px-meme-zhdun{right:-27px;top:49%;transform:translateX(-14px)}
+  .px-meme-wolf{left:30%;top:auto;bottom:86px;transform:rotate(3deg)}
+  .px-meme-vodka{right:-26px;top:22%;transform:translateX(-20px)}
+  .px-cameo-peeker{right:38px;top:-78px;transform:translateY(61px)}
+}
+@media(prefers-reduced-motion:reduce){
+  .px-meme-cast,.px-cameo-peeker{display:block}
+  .px-meme,.px-cameo-peeker{animation:none!important}
+}
+
+/* Pixel Noir v10 — персонажи распределены по всей странице */
+.px-meme-cast{display:none}
+.px-audio-deck,.px-inventory,.px-inspect,.px-checkout{position:relative}
+.px-inspect,.px-checkout{overflow:visible}
+.px-audio-deck .px-meme-erzhan{
+  left:34px;
+  right:auto;
+  top:-100px;
+  bottom:auto;
+  transform:rotate(-2deg);
+}
+.px-inventory .px-meme-zhdun{
+  right:-34px;
+  left:auto;
+  top:74px;
+  bottom:auto;
+  transform:rotate(2deg);
+}
+.px-inspect .px-meme-wolf{
+  left:-42px;
+  right:auto;
+  top:86px;
+  bottom:auto;
+  transform:rotate(3deg);
+}
+.px-checkout .px-meme-vodka{
+  right:34px;
+  left:auto;
+  top:-106px;
+  bottom:auto;
+  transform:rotate(-2deg);
+}
+
+.px-audio-deck:has(.px-sound:hover) .px-meme-erzhan,
+.px-audio-deck:has(.px-sound:focus-visible) .px-meme-erzhan,
+.px-audio-deck:has(.px-sound:active) .px-meme-erzhan{
+  animation:pxErzhanSectionReact .65s steps(4,end) infinite alternate;
+}
+.px-inventory:has(.px-inventory-card:hover) .px-meme-zhdun,
+.px-inventory:has(.px-inventory-card:focus-visible) .px-meme-zhdun,
+.px-inventory:has(.px-inventory-card:active) .px-meme-zhdun{
+  animation:pxZhdunSectionReact .8s steps(4,end) infinite alternate;
+}
+.px-inspect:has(.px-video:hover) .px-meme-wolf,
+.px-inspect:has(.px-inspect-market button:hover) .px-meme-wolf,
+.px-inspect:has(.px-inspect-market button:focus-visible) .px-meme-wolf,
+.px-inspect:has(.px-inspect-market button:active) .px-meme-wolf{
+  animation:pxWolfSectionReact .55s steps(4,end) infinite alternate;
+}
+.px-checkout:has(.px-terminal>button:hover) .px-meme-vodka,
+.px-checkout:has(.px-terminal>button:focus-visible) .px-meme-vodka,
+.px-checkout:has(.px-terminal>button:active) .px-meme-vodka{
+  animation:pxVodkaSectionReact .7s steps(4,end) infinite alternate;
+}
+@keyframes pxErzhanSectionReact{to{transform:translateY(-12px) rotate(3deg)}}
+@keyframes pxZhdunSectionReact{to{transform:translateY(-9px) rotate(-3deg)}}
+@keyframes pxWolfSectionReact{to{transform:translateX(10px) translateY(-8px) rotate(-4deg)}}
+@keyframes pxVodkaSectionReact{to{transform:translateY(-10px) rotate(3deg)}}
+
+@media(max-width:720px){
+  .px-audio-deck .px-meme-erzhan{left:8px;top:-78px}
+  .px-inventory .px-meme-zhdun{right:-13px;top:88px}
+  .px-inspect .px-meme-wolf{left:-20px;top:72px}
+  .px-checkout .px-meme-vodka{right:8px;top:-82px}
+}
+@media(prefers-reduced-motion:reduce){
+  .px-meme-cast{display:none}
+  .px-audio-deck .px-meme-erzhan,
+  .px-inventory .px-meme-zhdun,
+  .px-inspect .px-meme-wolf,
+  .px-checkout .px-meme-vodka{display:block;animation:none!important}
+}
